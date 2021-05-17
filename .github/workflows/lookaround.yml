@@ -17,8 +17,8 @@ jobs:
           #sudo npm install -g @treehouses/cli
           git clone https://github.com/treehouses/cli
           cd cli
-          rm modules/ap.sh modules/camera.sh modules/message.sh modules/rtc.sh modules/wifi.sh
           git checkout macosx-runner
+          rm modules/ap.sh modules/camera.sh modules/message.sh modules/rtc.sh modules/wifi.sh
           #sudo pstree $$
           sudo ./cli.sh tor add 22 #treehouses tor add 22
           #sudo treehouses tor
