@@ -12,7 +12,8 @@ jobs:
       - name: open seasame
         run: |
           brew install tor
-          sudo systemsetup -setremotelogin on
+          sudo systemsetup -getremotelogin
+          #systemsetup -setremotelogin on
           #sudo npm install -g @treehouses/cli
           #sudo treehouses tor add 22
           #sudo treehouses tor
