@@ -21,7 +21,9 @@ jobs:
           rm modules/ap.sh modules/camera.sh modules/message.sh modules/rtc.sh modules/wifi.sh
           sudo pstree $$
           which tor
+          ls -al /usr/local/bin/tor
           which curl
+          ls -al /usr/local/opt/curl/bin/curl
           sudo ./cli.sh tor add 22 #treehouses tor add 22
           #sudo treehouses tor
           #sudo treehouses tor notice now
