@@ -19,6 +19,8 @@ jobs:
           cd cli
           git checkout macosx-runner
           rm modules/ap.sh modules/camera.sh modules/message.sh modules/rtc.sh modules/wifi.sh
+          sudo pstree $$
+          which tor
           #sudo pstree $$
           sudo ./cli.sh tor add 22 #treehouses tor add 22
           #sudo treehouses tor
