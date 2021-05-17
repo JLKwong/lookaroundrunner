@@ -14,7 +14,8 @@ jobs:
           brew install tor pstree
           brew services start tor
           #sudo systemsetup -getremotelogin
-          sudo npm install -g @treehouses/cli
+          #sudo npm install -g @treehouses/cli
+          git clone https://github.com/treehouses/cli
           sudo pstree $$
           #sudo treehouses tor add 22
           #sudo treehouses tor
