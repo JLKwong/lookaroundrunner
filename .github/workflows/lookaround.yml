@@ -5,21 +5,21 @@ on:
 
 jobs:
   build-image:
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     steps:
       - name: checkout
         uses: actions/checkout@v2
-      - name: open seasame
-        run: |
+      #- name: open seasame
+        #run: |
           #sudo apt update  
-          sudo apt install tor openssh-server
-          sudo npm install -g @treehouses/cli
-          sudo treehouses tor add 22
-          sudo treehouses tor
-          sudo treehouses tor notice now
-          sudo treehouses sshkey github adduser dogi
-          sudo treehouses sshkey github adduser rjpadilla
-          sudo treehouses sshkey github adduser jlkwong
-          echo "shh only dreams"
-          sleep 600
+          #sudo apt install tor openssh-server
+          #sudo npm install -g @treehouses/cli
+          #sudo treehouses tor add 22
+          #sudo treehouses tor
+          #sudo treehouses tor notice now
+          #sudo treehouses sshkey github adduser dogi
+          #sudo treehouses sshkey github adduser rjpadilla
+          #sudo treehouses sshkey github adduser jlkwong
+          #echo "shh only dreams"
+          #sleep 600
             
