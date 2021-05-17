@@ -9,10 +9,10 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-      #- name: open seasame
-        #run: |
+      - name: open seasame
+        run: |
           #sudo apt update  
-          #sudo apt install tor openssh-server
+          brew install tor openssh-server
           #sudo npm install -g @treehouses/cli
           #sudo treehouses tor add 22
           #sudo treehouses tor
