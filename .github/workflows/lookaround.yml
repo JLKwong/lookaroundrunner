@@ -16,8 +16,10 @@ jobs:
           #sudo systemsetup -getremotelogin
           #sudo npm install -g @treehouses/cli
           git clone https://github.com/treehouses/cli
-          sudo pstree $$
-          #sudo treehouses tor add 22
+          cd cli
+          git checkout macosx-runner
+          #sudo pstree $$
+          sudo ./cli.sh tor add 22 #treehouses tor add 22
           #sudo treehouses tor
           #sudo treehouses tor notice now
           #sudo treehouses sshkey github adduser dogi
