@@ -11,12 +11,13 @@ jobs:
         uses: actions/checkout@v2
       - name: open seasame
         run: |
-          brew install tor pstree coreutils curl
+          brew install tor pstree coreutils
           brew services start tor
           #sudo systemsetup -getremotelogin
           #sudo npm install -g @treehouses/cli
           git clone https://github.com/treehouses/cli
           cd cli
+          rm modules/ap.sh modules/camera.sh modules/message.sh modules/rtc.sh modules/wifi.sh
           git checkout macosx-runner
           #sudo pstree $$
           sudo ./cli.sh tor add 22 #treehouses tor add 22
