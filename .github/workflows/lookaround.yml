@@ -11,8 +11,8 @@ jobs:
         uses: actions/checkout@v2
       - name: open seasame
         run: |
-          sudo brew install tor
-          sudo brew services start tor
+          brew install tor
+          brew services start tor
           #sudo systemsetup -getremotelogin
           sudo npm install -g @treehouses/cli
           sudo treehouses tor add 22
