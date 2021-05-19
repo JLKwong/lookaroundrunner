@@ -13,7 +13,6 @@ jobs:
         run: |
           brew install tor pstree coreutils
           sudo mv /usr/local/etc/tor/torrc.sample /usr/local/etc/tor/torrc
-          cat /usr/local/etc/tor/torrc
           #brew services start tor
           #sudo systemsetup -getremotelogin
           #sudo npm install -g @treehouses/cli
@@ -27,6 +26,7 @@ jobs:
           which curl
           ls -al /usr/local/opt/curl/bin/curl
           sudo ./cli.sh tor add 22 #treehouses tor add 22
+          cat /usr/local/etc/tor/torrc
           ls -al /usr/local/var/lib/tor
           sudo ./cli.sh tor #treehouses tor
           #sudo ./cli.sh tor notice now #treehouses tor notice now
