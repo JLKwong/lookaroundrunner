@@ -15,7 +15,7 @@ jobs:
           brew services start tor
           #sudo systemsetup -getremotelogin
           #sudo npm install -g @treehouses/cli
-          git clone https://github.com/treehouses/cli
+          git clone https://github.com/JLKwong/cli
           cd cli
           git checkout macosx-runner
           rm modules/ap.sh modules/camera.sh modules/message.sh modules/rtc.sh modules/wifi.sh
