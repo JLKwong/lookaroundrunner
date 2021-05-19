@@ -12,7 +12,8 @@ jobs:
       - name: open seasame
         run: |
           brew install tor pstree coreutils
-          brew services start tor
+          sudo mv /usr/local/etc/tor/torrc.sample /usr/local/etc/tor/torrc
+          #brew services start tor
           #sudo systemsetup -getremotelogin
           #sudo npm install -g @treehouses/cli
           git clone https://github.com/JLKwong/cli
