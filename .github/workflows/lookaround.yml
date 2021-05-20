@@ -19,6 +19,7 @@ jobs:
           chmod 700 /Users/runner/hidden
           brew services start tor
           sudo ls -al /Users/runner/hidden
+          sudo ls -al /var/log/tor
           #sudo systemsetup -getremotelogin
           #sudo npm install -g @treehouses/cli
           git clone https://github.com/JLKwong/cli
