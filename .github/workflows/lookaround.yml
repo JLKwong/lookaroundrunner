@@ -31,7 +31,6 @@ jobs:
           echo 1
           sudo ls -al /usr/local/var/log/tor/
           echo 2
-          Log debug file /usr/local/var/log/tor/debug.log
           sudo cat /usr/local/var/log/tor/debug.log
           echo 3
           
