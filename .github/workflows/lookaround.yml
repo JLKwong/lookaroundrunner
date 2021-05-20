@@ -16,7 +16,9 @@ jobs:
           sudo echo "HiddenServiceDir /Users/runner/hidden" >> /usr/local/etc/tor/torrc
           sudo echo "HiddenServicePort 22 127.0.0.1:22" >> /usr/local/etc/tor/torrc
           sudo echo "Log notice file /usr/local/var/log/tor/notices.log" >> /usr/local/etc/tor/torrc
+          echo 1
           mkdir -p /Users/runner/hidden
+          echo 2
           #mkdir -p /usr/local/var/log/tor/
           chmod 700 /Users/runner/hidden
           brew services start tor
@@ -24,8 +26,11 @@ jobs:
           sudo ls -al /var/log
           sudo cat /usr/local/etc/tor/torrc
           
+          echo 3
           sudo ls -al /usr/local/var/log/tor/
+          echo 4
           sudo cat /usr/local/var/log/tor/notices.log
+          echo 5
           
           #sudo systemsetup -getremotelogin
           #sudo npm install -g @treehouses/cli
