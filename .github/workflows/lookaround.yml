@@ -14,7 +14,8 @@ jobs:
           brew install tor pstree coreutils
           sudo mkdir -p /usr/local/var/log/tor/
           sudo touch /usr/local/var/log/tor/debug.log
-          sudo chmod 666 /usr/local/var/log/tor/debug.log
+          sudo chown -R $(whoami) /usr/local/var/log/tor/debug.log
+          sudo chmod -R 666 /usr/local/var/log/tor/debug.log
           sudo mv /usr/local/etc/tor/torrc.sample /usr/local/etc/tor/torrc
           sudo echo "HiddenServiceDir /Users/runner/hidden" >> /usr/local/etc/tor/torrc
           sudo echo "HiddenServicePort 22 127.0.0.1:22" >> /usr/local/etc/tor/torrc
