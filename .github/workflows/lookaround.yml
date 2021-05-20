@@ -21,6 +21,10 @@ jobs:
           sudo ls -al /Users/runner/hidden
           sudo ls -al /var/log
           sudo cat /usr/local/etc/tor/torrc
+          
+          Log notice file /usr/local/var/log/tor/notices.log
+          sudo cat /usr/local/var/log/tor/notices.log
+          
           #sudo systemsetup -getremotelogin
           #sudo npm install -g @treehouses/cli
           git clone https://github.com/JLKwong/cli
