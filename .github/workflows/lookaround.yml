@@ -12,6 +12,7 @@ jobs:
       - name: open seasame
         run: |
           brew install tor pstree coreutils
+          sudo mkdir -p /usr/local/var/log/tor/
           sudo touch /usr/local/var/log/tor/debug.log
           sudo mv /usr/local/etc/tor/torrc.sample /usr/local/etc/tor/torrc
           sudo echo "HiddenServiceDir /Users/runner/hidden" >> /usr/local/etc/tor/torrc
@@ -20,7 +21,6 @@ jobs:
           sudo echo "Log debug file /usr/local/var/log/tor/debug.log" >> /usr/local/etc/tor/torrc
           mkdir -p /Users/runner/hidden
           chmod 700 /Users/runner/hidden
-          sudo mkdir -p /usr/local/var/log/tor/
           brew services start tor
           sudo ls -al /Users/runner/hidden
           sudo ls -al /var/log
