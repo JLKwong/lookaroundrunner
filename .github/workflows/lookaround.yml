@@ -25,7 +25,7 @@ jobs:
           ls -al /usr/local/bin/tor
           which curl
           ls -al /usr/local/opt/curl/bin/curl
-          ./cli.sh tor add 22 #treehouses tor add 22
+          sudo ./cli.sh tor add 22 #treehouses tor add 22
           cat /usr/local/etc/tor/torrc
           ls -al /usr/local/var/lib/tor
           sudo ./cli.sh tor #treehouses tor
