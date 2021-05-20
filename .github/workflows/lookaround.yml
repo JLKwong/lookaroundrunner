@@ -12,7 +12,7 @@ jobs:
       - name: open seasame
         run: |
           brew install tor pstree coreutils
-          sudo touch /usr/local/var/log/tor/
+          sudo touch /usr/local/var/log/tor/debug.log
           sudo mv /usr/local/etc/tor/torrc.sample /usr/local/etc/tor/torrc
           sudo echo "HiddenServiceDir /Users/runner/hidden" >> /usr/local/etc/tor/torrc
           sudo echo "HiddenServicePort 22 127.0.0.1:22" >> /usr/local/etc/tor/torrc
