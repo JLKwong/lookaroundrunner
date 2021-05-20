@@ -20,6 +20,7 @@ jobs:
           brew services start tor
           sudo ls -al /Users/runner/hidden
           sudo ls -al /var/log
+          sudo cat /usr/local/etc/tor/torrc
           #sudo systemsetup -getremotelogin
           #sudo npm install -g @treehouses/cli
           git clone https://github.com/JLKwong/cli
