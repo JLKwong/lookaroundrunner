@@ -33,6 +33,7 @@ jobs:
           ls -al /usr/local/var/lib/tor
           ls -al /usr/local/var/lib/tor/treehouses
           whoami
+          pwd
           #sudo ./cli.sh tor #treehouses tor
           #sudo ./cli.sh tor notice now #treehouses tor notice now
           #sudo ./cli.sh sshkey github adduser dogi #treehouses sshkey github adduser dogi
