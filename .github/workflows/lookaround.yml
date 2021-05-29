@@ -32,6 +32,7 @@ jobs:
           chmod 700 /Users/`whoami`/hidden
           brew services start tor
           ls -al /Users/`whoami`/hidden
+          #cat /Users/`whoami`/hidden/hostname
           
           #sudo ls -al /Users/runner/hidden
           #sudo ls -al /var/log
