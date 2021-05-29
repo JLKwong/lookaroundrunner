@@ -54,4 +54,12 @@ jobs:
           #sudo ./cli.sh sshkey github adduser jlkwong #treehouses sshkey github adduser jlkwong
           #echo "shh only dreams"
           #sleep 600
-            
+
+          #cp /usr/local/etc/tor/torrc.sample /usr/local/etc/tor/torrc
+          #echo "HiddenServiceDir /Users/`whoami`/hidden" >> /usr/local/etc/tor/torrc
+          #echo "HiddenServicePort 22 127.0.0.1:22" >> /usr/local/etc/tor/torrc
+          #tail /usr/local/etc/tor/torrc
+          #mkdir -p /Users/`whoami`/hidden
+          #chmod 700 /Users/`whoami`/hidden
+          #brew services start tor
+          #ls -al /Users/`whoami`/hidden
