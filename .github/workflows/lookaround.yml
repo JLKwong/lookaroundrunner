@@ -16,23 +16,32 @@ jobs:
           sudo touch /usr/local/var/log/tor/debug.log
           sudo chown -R $(whoami) /usr/local/var/log/tor/debug.log
           sudo chmod -R 666 /usr/local/var/log/tor/debug.log
-          sudo mv /usr/local/etc/tor/torrc.sample /usr/local/etc/tor/torrc
-          sudo echo "HiddenServiceDir /Users/runner/hidden" >> /usr/local/etc/tor/torrc
-          sudo echo "HiddenServicePort 22 127.0.0.1:22" >> /usr/local/etc/tor/torrc
+          #sudo mv /usr/local/etc/tor/torrc.sample /usr/local/etc/tor/torrc
+          #sudo echo "HiddenServiceDir /Users/runner/hidden" >> /usr/local/etc/tor/torrc
+          #sudo echo "HiddenServicePort 22 127.0.0.1:22" >> /usr/local/etc/tor/torrc
           #sudo echo "Log notice file /usr/local/var/log/tor/notices.log" >> /usr/local/etc/tor/torrc
-          sudo echo "Log debug file /usr/local/var/log/tor/debug.log" >> /usr/local/etc/tor/torrc
-          mkdir -p /Users/runner/hidden
-          chmod 700 /Users/runner/hidden
-          brew services start tor
-          sudo ls -al /Users/runner/hidden
-          sudo ls -al /var/log
-          sudo cat /usr/local/etc/tor/torrc
+          #sudo echo "Log debug file /usr/local/var/log/tor/debug.log" >> /usr/local/etc/tor/torrc
+          #mkdir -p /Users/runner/hidden
+          #chmod 700 /Users/runner/hidden
           
-          echo 1
-          sudo ls -al /usr/local/var/log/tor/
-          echo 2
-          sudo cat /usr/local/var/log/tor/debug.log
-          echo 3
+          cp /usr/local/etc/tor/torrc.sample /usr/local/etc/tor/torrc
+          echo "HiddenServiceDir /Users/`whoami`/hidden" >> /usr/local/etc/tor/torrc
+          echo "HiddenServicePort 22 127.0.0.1:22" >> /usr/local/etc/tor/torrc
+          tail /usr/local/etc/tor/torrc
+          mkdir -p /Users/`whoami`/hidden
+          chmod 700 /Users/`whoami`/hidden
+          brew services start tor
+          ls -al /Users/`whoami`/hidden
+          
+          #sudo ls -al /Users/runner/hidden
+          #sudo ls -al /var/log
+          #sudo cat /usr/local/etc/tor/torrc
+          
+          #echo 1
+          #sudo ls -al /usr/local/var/log/tor/
+          #echo 2
+          #sudo cat /usr/local/var/log/tor/debug.log
+          #echo 3
           
           #sudo systemsetup -getremotelogin
           #sudo npm install -g @treehouses/cli
@@ -55,11 +64,4 @@ jobs:
           #echo "shh only dreams"
           #sleep 600
 
-          #cp /usr/local/etc/tor/torrc.sample /usr/local/etc/tor/torrc
-          #echo "HiddenServiceDir /Users/`whoami`/hidden" >> /usr/local/etc/tor/torrc
-          #echo "HiddenServicePort 22 127.0.0.1:22" >> /usr/local/etc/tor/torrc
-          #tail /usr/local/etc/tor/torrc
-          #mkdir -p /Users/`whoami`/hidden
-          #chmod 700 /Users/`whoami`/hidden
-          #brew services start tor
-          #ls -al /Users/`whoami`/hidden
+
