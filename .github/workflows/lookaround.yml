@@ -11,11 +11,13 @@ jobs:
         uses: actions/checkout@v2
       - name: open seasame
         run: |
-          brew install tor pstree coreutils
-          mkdir -p /usr/local/var/log/tor/ #sudo not needed
-          touch /usr/local/var/log/tor/debug.log #sudo not needed
-          chown -R $(whoami) /usr/local/var/log/tor/debug.log #sudo not needed
-          chmod -R 666 /usr/local/var/log/tor/debug.log #sudo not needed
+          #OLD
+          #brew install tor pstree coreutils
+          #mkdir -p /usr/local/var/log/tor/ #sudo not needed
+          #touch /usr/local/var/log/tor/debug.log #sudo not needed
+          #chown -R $(whoami) /usr/local/var/log/tor/debug.log #sudo not needed
+          #chmod -R 666 /usr/local/var/log/tor/debug.log #sudo not needed
+          
           #sudo mv /usr/local/etc/tor/torrc.sample /usr/local/etc/tor/torrc
           #sudo echo "HiddenServiceDir /Users/runner/hidden" >> /usr/local/etc/tor/torrc
           #sudo echo "HiddenServicePort 22 127.0.0.1:22" >> /usr/local/etc/tor/torrc
@@ -24,14 +26,16 @@ jobs:
           #mkdir -p /Users/runner/hidden
           #chmod 700 /Users/runner/hidden
           
-          cp /usr/local/etc/tor/torrc.sample /usr/local/etc/tor/torrc
-          echo "HiddenServiceDir /Users/`whoami`/hidden" >> /usr/local/etc/tor/torrc
-          echo "HiddenServicePort 22 127.0.0.1:22" >> /usr/local/etc/tor/torrc
-          tail /usr/local/etc/tor/torrc
-          mkdir -p /Users/`whoami`/hidden
-          chmod 700 /Users/`whoami`/hidden
-          brew services start tor
-          ls -al /Users/`whoami`/hidden
+          #OLD
+          #cp /usr/local/etc/tor/torrc.sample /usr/local/etc/tor/torrc
+          #echo "HiddenServiceDir /Users/`whoami`/hidden" >> /usr/local/etc/tor/torrc
+          #echo "HiddenServicePort 22 127.0.0.1:22" >> /usr/local/etc/tor/torrc
+          #tail /usr/local/etc/tor/torrc
+          #mkdir -p /Users/`whoami`/hidden
+          #chmod 700 /Users/`whoami`/hidden
+          #brew services start tor
+          #ls -al /Users/`whoami`/hidden
+
           #cat /Users/`whoami`/hidden/hostname
           
           #sudo ls -al /Users/runner/hidden
@@ -46,10 +50,13 @@ jobs:
           
           #sudo systemsetup -getremotelogin
           #sudo npm install -g @treehouses/cli
-          git clone https://github.com/JLKwong/cli
-          cd cli
-          git checkout macosx-runner
-          rm modules/ap.sh modules/camera.sh modules/message.sh modules/rtc.sh modules/wifi.sh
+          
+          #OLD
+          #git clone https://github.com/JLKwong/cli
+          #cd cli
+          #git checkout macosx-runner
+          #rm modules/ap.sh modules/camera.sh modules/message.sh modules/rtc.sh modules/wifi.sh
+          
           #sudo pstree $$
           #which tor
           #ls -al /usr/local/bin/tor
@@ -65,4 +72,11 @@ jobs:
           #echo "shh only dreams"
           #sleep 600
 
-
+          #NEW
+          brew install tor
+          mv /usr/local/etc/tor/torrc.sample /usr/local/etc/tor/torrc
+          brew install torsocks
+          ln -sfv /usr/local/opt/tor/*.plist ~/Library/LaunchAgents
+          sudo chown root:wheel ~/Library/LaunchAgents/homebrew.mxcl.tor.plist
+          launchctl load ~/Library/LaunchAgents/homebrew.mxcl.tor.plist
+          curl --socks5 localhost:9050 --socks5-hostname localhost:9050 -s https://check.torproject.org/ | cat | grep -m 1 Congratulations | xargs
